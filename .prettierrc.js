@@ -1,20 +1,21 @@
 module.exports = {
   "arrowParens": "always",
-  "bracketSpacing": true,
+  "bracketSpacing": false,
   "embeddedLanguageFormatting": "auto",
   "htmlWhitespaceSensitivity": "css",
   "insertPragma": false,
-  "jsxBracketSameLine": false,
-  "jsxSingleQuote": false,
-  "printWidth": 100,
+  "jsxBracketSameLine": true,
+  "jsxSingleQuote": true,
+  "printWidth": 120,
   "proseWrap": "preserve",
   "quoteProps": "consistent",
   "requirePragma": false,
   "semi": true,
-  "singleQuote": false,
+  "singleQuote": true,
   "tabWidth": 2,
   "trailingComma": "es5",
   "useTabs": false,
-  "vueIndentScriptAndStyle": false,
+  "vueIndentScriptAndStyle": true,
   "rangeEnd": 0
 };
+
