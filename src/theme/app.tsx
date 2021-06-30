@@ -1,4 +1,5 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+const { width } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   fondo: {
@@ -25,20 +26,19 @@ export const styles = StyleSheet.create({
   },
   fila: {
     flexDirection: 'row',
-    justifyContent: 'center',
-    marginBottom: 18,
-    paddingHorizontal: 10,
+    justifyContent: 'space-between',
+    marginBottom: 10,
+    // paddingHorizontal: 10,
   },
   button: {
-    height: 70,
-    width: 70,
-    marginHorizontal: 10,
+    height: width * 0.2,
+    // marginHorizontal: width * 0.02,
     borderRadius: 100,
     justifyContent: 'center',
     alignItems: 'center',
   },
   buttonText: {
-    padding: 10,
+    padding: 0,
     fontSize: 30,
     fontWeight: '300',
     // color: 'rgba(0, 0, 0, 1)',

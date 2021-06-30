@@ -1,6 +1,8 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Dimensions } from 'react-native';
 import { styles } from '../theme/app';
+
+const { width } = Dimensions.get('window');
 
 interface Props {
   text: string;
@@ -16,13 +18,15 @@ export const ButtonCalc = ({ text = '', colorBack = '#2d2d2d', big = false, acti
         ...styles.button,
         backgroundColor: colorBack,
         width: (big) ?
-          160 :
-          70,
+          width * 0.44 :
+          width * 0.2,
       }}>
         <Text style={
           {
             ...styles.buttonText,
-            color: (colorBack === '#9b9b9b') ? 'black' : '#fff',
+            color: (colorBack === '#9b9b9b') ?
+              'black' :
+              '#fff',
           }
         }>
           {text}

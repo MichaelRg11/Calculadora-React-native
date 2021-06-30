@@ -58,28 +58,48 @@ export const useCalculator = () => {
     }
   };
 
-  const previousNumber = () => {
-    setPreNumber(number.endsWith('.') ? number.slice(0, -1) : number);
-    setNumber('0');
+  const previousNumber = (num: string, operation: string) => {
+    if (num === '0') {
+      setPreNumber(number.endsWith('.') ? number.slice(0, -1) : number);
+      setNumber('0');
+    } else {
+      const num1 = Number(number);
+      const num2 = Number(preNumber);
+      switch (operation) {
+        case 'SUMAR':
+          setPreNumber(`${num1 + num2}`);
+          break;
+        case 'RESTAR':
+          setPreNumber(`${num2 - num1}`);
+          break;
+        case 'MULTIPLICAR':
+          setPreNumber(`${num1 * num2}`);
+          break;
+        case 'DIVIDIR':
+          setPreNumber(`${num2 / num1}`);
+          break;
+      }
+      setNumber('0');
+    }
   };
 
   const btnDividir = () => {
-    previousNumber();
+    previousNumber(preNumber, 'DIVIDIR');
     operations.current = Operators.dividir;
   };
 
   const btnSumar = () => {
-    previousNumber();
+    previousNumber(preNumber, 'SUMAR');
     operations.current = Operators.sumar;
   };
 
   const btnRestar = () => {
-    previousNumber();
+    previousNumber(preNumber, 'RESTAR');
     operations.current = Operators.restar;
   };
 
   const btnMultiplicar = () => {
-    previousNumber();
+    previousNumber(preNumber, 'MULTIPLICAR');
     operations.current = Operators.multiplicar;
   };
 
